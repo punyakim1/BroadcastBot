@@ -51,8 +51,7 @@ async def startprivate(client, message):
                 InlineKeyboardButton("CHANNEL", url="https://t.me/nacbots"),
                 InlineKeyboardButton(
                     "SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"),
-                InlineKeyboardButton(
-                    "SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"
+                InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"
                 ),
             ]
         ]
