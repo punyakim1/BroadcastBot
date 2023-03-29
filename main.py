@@ -47,8 +47,7 @@ async def startprivate(client, message):
             logging.info(f"#NewUser :- Name : {message.from_user.first_name} ID : {message.from_user.id}")
     joinButton = InlineKeyboardMarkup(
         [
-            [
-                 [
+            [ 
                 InlineKeyboardButton("CHANNEL", url="https://t.me/nacbots"),
                 InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"
                  InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"     
