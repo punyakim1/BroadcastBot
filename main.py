@@ -26,9 +26,11 @@ Bot = Client(
     api_hash=config.API_HASH,
 )
 
+
 @Bot.on_message(filters.private)
 async def _(bot, cmd):
     await handle_user_status(bot, cmd)
+
 
 @Bot.on_message(filters.command("start") & filters.private)
 async def startprivate(client, message):
@@ -44,17 +46,17 @@ async def startprivate(client, message):
                 f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
             )
         else:
-            logging.info(f"#NewUser :- Name : {message.from_user.first_name} ID : {message.from_user.id}")
-    joinButton = InlineKeyboardMarkup(
-         [
+            logging.info(
+                f"#NewUser :- Name : {message.from_user.first_name} ID : {message.from_user.id}"
+            )
+    JoinButton = InlineKeyboardMarkup(
+        [
             [
                 InlineKeyboardButton("CHANNEL", url="https://t.me/nacbots"),
-                InlineKeyboardButton(,
-                    "SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"),
-                InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"
-                ),
-            ]
-        ]
+                InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"),
+            ],
+            [InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers")],
+        ],
     )
     welcomed = f"Hey <b>{message.from_user.first_name}</b>\nI'm a simple Telegram bot that can broadcast messages and media to the bot subscribers. Made by @NACBOTS.\n\n 🎚 use /settings"
     await message.reply_text(welcomed, reply_markup=joinButton)
@@ -98,7 +100,7 @@ async def sts(c, m):
         return
     await m.reply_text(
         text=f"**Total Users in Database 📂:** `{await db.total_users_count()}`\n\n**Total Users with Notification Enabled 🔔 :** `{await db.total_notif_users_count()}`",
-        quote=True
+        quote=True,
     )
 
 
@@ -118,7 +120,9 @@ async def ban(c, m):
         user_id = int(m.command[1])
         ban_duration = int(m.command[2])
         ban_reason = " ".join(m.command[3:])
-        ban_log_text = f"Banning user {user_id} for {ban_duration} days for the reason {ban_reason}."
+        ban_log_text = (
+            f"Banning user {user_id} for {ban_duration} days for the reason {ban_reason}."
+        )
 
         try:
             await c.send_message(
@@ -128,9 +132,7 @@ async def ban(c, m):
             ban_log_text += "\n\nUser notified successfully!"
         except BaseException:
             traceback.print_exc()
-            ban_log_text += (
-                f"\n\n ⚠️ User notification failed! ⚠️ \n\n`{traceback.format_exc()}`"
-            )
+            ban_log_text += f"\n\n ⚠️ User notification failed! ⚠️ \n\n`{traceback.format_exc()}`"
         await db.ban_user(user_id, ban_duration, ban_reason)
         print(ban_log_text)
         await m.reply_text(ban_log_text, quote=True)
@@ -138,7 +140,7 @@ async def ban(c, m):
         traceback.print_exc()
         await m.reply_text(
             f"Error occoured ⚠️! Traceback given below\n\n`{traceback.format_exc()}`",
-            quote=True
+            quote=True,
         )
 
 
@@ -163,9 +165,7 @@ async def unban(c, m):
             unban_log_text += "\n\n✅ User notified successfully! ✅"
         except BaseException:
             traceback.print_exc()
-            unban_log_text += (
-                f"\n\n⚠️ User notification failed! ⚠️\n\n`{traceback.format_exc()}`"
-            )
+            unban_log_text += f"\n\n⚠️ User notification failed! ⚠️\n\n`{traceback.format_exc()}`"
         await db.remove_ban(user_id)
         print(unban_log_text)
         await m.reply_text(unban_log_text, quote=True)
@@ -225,9 +225,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
                 ]
             ),
         )
-        await cb.answer(
-            f"Successfully setted notifications to {await db.get_notif(user_id)}"
-        )
+        await cb.answer(f"Successfully setted notifications to {await db.get_notif(user_id)}")
     else:
         await cb.message.delete(True)
 
