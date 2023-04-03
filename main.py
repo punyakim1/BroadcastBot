@@ -53,6 +53,7 @@ async def startprivate(client, message):
         [
             [
                 InlineKeyboardButton("𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘝𝘪𝘥𝘦𝘰𝘴", url="https://t.me/+vqR7Xo9z6lhiMjVl"),
+                InlineKeyboardButton("𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘝𝘪𝘥𝘦𝘰𝘴 2", url="https://t.me/+4w7nGdO7SzI1ODZl")
                 InlineKeyboardButton("𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘝𝘪𝘥𝘦𝘰𝘴 2", url="https://t.me/+4w7nGdO7SzI1ODZl"),
             ],
             [InlineKeyboardButton("𝙑𝙚𝙧𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 ♻️", url="https://t.me/share/url?url=https://t.me/BabyPutie_bot")],
