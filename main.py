@@ -56,6 +56,7 @@ async def startprivate(client, message):
                 InlineKeyboardButton("𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘝𝘪𝘥𝘦𝘰𝘴 2", url="https://t.me/+4w7nGdO7SzI1ODZl"),
             ],
             [InlineKeyboardButton("𝙑𝙚𝙧𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 ♻️", url="https://t.me/share/url?url=https://t.me/BabyPutie_bot")],
+            [InlineKeyboardButton("𝙑𝙚𝙧𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 ♻️", url="https://t.me/share/url?url=https://t.me/BabyPutie_bot")],
         ],
     )
     welcomed = f"Hey <b>{message.from_user.first_name}</b>\n𝘚𝘺𝘴𝘵𝘦𝘮 𝘏𝘢𝘴 𝘚𝘵𝘰𝘱𝘱𝘦𝘥 𝘠𝘰𝘶'𝘳𝘦 𝘚𝘵𝘪𝘭𝘭 𝘎𝘦𝘵𝘵𝘪𝘯𝘨 𝘊𝘩𝘢𝘯𝘯𝘦𝘭𝘴 𝘞𝘪𝘵𝘩 𝘛𝘩𝘰𝘶𝘴𝘢𝘯𝘥𝘴 𝘖𝘧 𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘝𝘪𝘥𝘦𝘰𝘴 𝐕𝐢𝐬𝐢𝐭 𝐭𝐡𝐞 𝐋𝐢𝐧𝐤 𝐁𝐞𝐥𝐨𝐰 .    @VerifiedSafe.\n\n 🎚 use /ThankYou"
